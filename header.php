@@ -3,6 +3,9 @@
  * The Header for our theme.
  *
  * Displays all of the <head> section and everything up till <div id="main">
+ 
+ * Modified by Bethany Rentz for use on http://gardentraveler.
+ * modifications include addition of FAcebook code, navigation breadcumb code and google ad
  *
  * @package WordPress
  * @subpackage Twenty_Twelve

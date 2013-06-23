@@ -4,6 +4,8 @@
  *
  * Contains footer content and the closing of the
  * #main and #page div elements.
+ 
+ * Modified by Bethany Rentz for use on http://gardentraveler
  *
  * @package WordPress
  * @subpackage Twenty_Twelve

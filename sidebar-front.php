@@ -3,6 +3,7 @@
  * The sidebar containing the front page widget areas.
  *
  * If no active widgets in either sidebar, they will be hidden completely.
+ * Modified by Bethany Rentz for use on http://gardentraveler
  *
  * @package WordPress
  * @subpackage Twenty_Twelve
