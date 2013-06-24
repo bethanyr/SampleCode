@@ -67,10 +67,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 $args = array(
 	'post_type' => 'post',
 	'category_name' => 'events',
-        'posts_per_page' => '3',
-'meta_key' => 'startdate',
- 'orderby' => 'meta_value', 
-'order' => 'ASC' 
+    'posts_per_page' => '3',
+	'meta_key' => 'startdate',
+	'orderby' => 'meta_value', 
+	'order' => 'ASC' 
 );
 
 $query = new WP_Query( $args); ?>
