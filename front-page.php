@@ -13,7 +13,8 @@
  * @since Twenty Twelve 1.0
  */
 
-get_header(); ?>
+/* Load the header function - header.php */
+ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
@@ -23,21 +24,24 @@ get_header(); ?>
 <h1>Featured Gardens</h1>
 </div><!--featuregard -->
 
+<!-- query posts and return posts with feature tag to display on home page -->
 <?php
  query_posts('tag=feature'); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 				
 <div class="entry-feature">
 
+<!-- display thumbnail size of featured image of post -->
 <?php the_post_thumbnail(array(150,150), array('class'=> 'aligncenter')); ?>
 
+<!-- display title, link to post and excerpt under the picture -->
 <a href="<?php echo get_permalink(); ?>"> <?php echo the_title(); ?></a>
 <?php the_excerpt(); ?>
 
 </div>  <!-- #entry-feature-->
 			<?php endwhile; // end of the loop. ?>
 
-
+<!-- display google ad -->
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-6539312976102774";
 /* GT Banner */
@@ -49,7 +53,8 @@ google_ad_height = 60;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-	
+
+<!-- display most recent posts categorized as garden events sorted by start date -->	
 <div class="featuregard">
 <h1>Upcoming Garden Events</h1>
 </div>
@@ -70,7 +75,7 @@ $args = array(
 
 $query = new WP_Query( $args); ?>
 
-
+<!-- display the event posts on the page -->
 <?php 
 // The Loop
 while( $query->have_posts() ): 	$query->the_post(); ?>
@@ -87,6 +92,9 @@ while( $query->have_posts() ): 	$query->the_post(); ?>
  	
 <?php endwhile; ?>
 <a href="/category/events"> Find more garden events...</a>
+
+<!-- display google ad -->
+
 <div class="google">
 
 <script type="text/javascript"><!--
@@ -101,6 +109,8 @@ google_ad_height = 15;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 </div> 
+
+<!-- display 3 posts of category clippings that were most recently published - sorted by published date desc -->
 <div class="featuregard">
 <h1>Recent Clippings</h1>
 </div> <!-- Featureclip -->
@@ -113,7 +123,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 $args = array(
 	'post_type' => 'post',
 	'category_name' => 'clipping',
-        'posts_per_page' => '3',
+    'posts_per_page' => '3',
  'orderby' => 'date', 
 'order' => 'DESC' 
 );
@@ -139,22 +149,14 @@ while( $query->have_posts() ): 	$query->the_post(); ?>
 <a href="/category/clipping"> Read more clippings...</a>						
 			
 		
-	
-
-
-
-
-
-
 	</div><!-- #primary -->
 </div><!-- content -->
 
-
-
-
+<!--call function to display sidebar of page - displays sidebar-front.php -->
 
 <?php get_sidebar( 'front' ); ?>
 
+<!--display footer.php -->
 
 <?php get_footer(); ?>
 </div> <!-- from header code -->
